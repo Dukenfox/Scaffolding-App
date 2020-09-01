@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Season from "./Season";
-
+import Loading from "./Loading";
 class App extends React.Component {
   state = { lat: null, errorMessage: "" };
 
@@ -20,7 +20,11 @@ class App extends React.Component {
     if (!this.state.errorMessage && this.state.lat) {
       return <Season lat={this.state.lat} />;
     }
-    return <div>Loading</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 }
 
